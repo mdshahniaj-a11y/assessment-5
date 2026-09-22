@@ -12,9 +12,7 @@ import Footer from "./component/Footer";
 
 function App() {
   const [technologies, setTechnologies] = useState<ITechnology[]>([]);
-  const [selectedTechnologies, setSelectedTechnologies] = useState<
-    ITechnology[]
-  >([]);
+  const [selectedTechnologies, setSelectedTechnologies] = useState<ITechnology[]>([]);
 
   // JSON data load
   useEffect(() => {
@@ -41,6 +39,13 @@ function App() {
     setSelectedTechnologies(newStack);
 
     toast.info("Technology removed!");
+  };
+
+  // Delete All
+  const handleDeleteAll = () => {
+    setSelectedTechnologies([]);
+
+    toast.info("All technologies removed!");
   };
 
   return (
@@ -77,7 +82,9 @@ function App() {
           <YourStack
             selectedTechnologies={selectedTechnologies}
             handleDelete={handleDelete}
+            handleDeleteAll={handleDeleteAll}
           />
+          
 
         </div>
       </div>

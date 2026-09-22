@@ -4,11 +4,13 @@ import type { ITechnology } from "./TechnologyCard";
 interface YourStackProps {
     selectedTechnologies: ITechnology[];
     handleDelete: (id: string) => void;
+    handleDeleteAll: () => void;
 }
 
 const YourStack = ({
     selectedTechnologies,
     handleDelete,
+    handleDeleteAll,
 }: YourStackProps) => {
     return (
         <div className="h-fit rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
@@ -31,6 +33,16 @@ const YourStack = ({
                     ? "No technologies selected yet."
                     : `${selectedTechnologies.length} technologies selected.`}
             </p>
+
+            {/* Remove All */}
+            {selectedTechnologies.length > 0 && (
+                <button
+                    onClick={handleDeleteAll}
+                    className="mt-2 text-xs font-semibold text-red-500 hover:underline"
+                >
+                    Remove All
+                </button>
+            )}
 
             {/* Empty Stack */}
             {selectedTechnologies.length === 0 && (

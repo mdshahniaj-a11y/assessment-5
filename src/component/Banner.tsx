@@ -15,7 +15,7 @@ const Banner = () => {
                             Build Your Ideal
                         </h1>
 
-                        <h2 className="text-5xl font-bold text-pink-500">
+                        <h2 className="text-5xl font-bold bg-linear-to-r from-orange-500 via-pink-500 to-purple-600 text-transparent bg-clip-text">
                             Development Stack
                         </h2>
 
